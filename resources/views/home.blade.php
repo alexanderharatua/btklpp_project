@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>BTKLPP</title>
+        <title>BTKLPP Medan</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{{ asset('/tes/img/favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('/tes/img/portfolio/logicil.png') }}" />
         <!-- Font Awesome icons (free ve rsion)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -78,8 +78,8 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Balai Teknik Kesehatan Lingkungan dan Pengendalian Penyakit (BTKLPP) 
-                    Medan</p>
+                <h1 class="masthead-subheading font-weight-light mb-0">Balai Teknik Kesehatan Lingkungan dan Pengendalian Penyakit (BTKLPP) 
+                    Medan</h1>
             
 
             </div>
@@ -148,7 +148,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="tes/img/portfolio/submarine.png" alt="" />
+                            <img class="img-fluid" src="tes/img/portfolio/lima.jpg" alt="" />
                         </div>
                     </div>
                 </div>
@@ -187,13 +187,9 @@
                      <img src="{{ asset('tes/img/portfolio/buletin_dbd.jpg')}}" alt="Card image cap">
                         <div class="card-body">
                           <h5 class="card-title">Demam Berdarah</h5>
-                          <p class="card-text">Demam Berdarah Dengue banyak ditemukan di daerah tropis dan sub-tropis. Data dari<span id="dots">...</span><span id="more">seluruh dunia menunjukkan Asia menempati 
-                             urutan pertama dalam jumlah penderita
-                             DBD setiap tahunnya. Sementara itu, terhitung sejak tahun 1968 hingga tahun 
-                             2009, World Health Organization (WHO) mencatat 
-                            negara Indonesia sebagai negara dengan kasus DBD tertinggi di Asia Tenggara.
+                          <p class="card-text">Demam Berdarah Dengue banyak ditemukan di daerah tropis dan sub-tropis. Data dari...
                             </span></p>
-                          <button class="btn btn-primary" onclick="myFunction()" id="myBtn">Read More</button>                       
+                            <a href="#" class="btn btn-primary">Baca selengkapnya</a>                      
                       </div>
                 </div>
             </div>
@@ -313,7 +309,7 @@
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
-                    <  class="modal-body text-center">
+                    <div class="modal-body text-center">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
@@ -396,7 +392,7 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="tes/img/portfolio/tiga.jpg" alt="" />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-5">Telah terlaksana kegiatan harian.</p>
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -430,7 +426,7 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="tes/img/portfolio/gambar.jpg" alt="" />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-5">Telah terlaksana kegiatan harian.</p>
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -454,7 +450,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal5Label">Locked Safe</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal5Label">Agenda Kegiatan</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -464,7 +460,7 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="tes/img/portfolio/empat.jpg" alt="" />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-5">Telah berlangsung kegiatan .</p>
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -488,7 +484,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal6Label">Submarine</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal6Label">Kegiatan</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -496,9 +492,9 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="{{asset('tes/img/portfolio/submarine.png')}}" alt="" />
+                                    <img class="img-fluid rounded mb-5" src="{{asset('tes/img/portfolio/lima.jpg')}}" alt="" />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-5">Kegiatan pelaksanaan keseharian.</p>
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -523,25 +519,6 @@
         <script src="{{ asset('/js/scripts.js') }}"></script>
         <script src="{{ asset('/js/app.js') }}"></script>
         <script src="{{ asset('/js/bootstrap.js') }}"></script>
-
-        {{-- script read more --}}
-        <script>
-            function myFunction() {
-              var dots = document.getElementById("dots");
-              var moreText = document.getElementById("more");
-              var btnText = document.getElementById("myBtn");
-            
-              if (dots.style.display === "none") {
-                dots.style.display = "inline";
-                btnText.innerHTML = "Read more"; 
-                moreText.style.display = "none";
-              } else {
-                dots.style.display = "none";
-                btnText.innerHTML = "Read less"; 
-                moreText.style.display = "inline";
-              }
-            }
-            </script>
         
     </body>
 </html>
