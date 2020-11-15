@@ -259,6 +259,7 @@
          </section>
  
         </div>
+        
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">

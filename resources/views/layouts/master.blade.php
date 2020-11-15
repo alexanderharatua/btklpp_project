@@ -70,7 +70,6 @@
             <section>
                 @yield('content')
             </section>
-
         
         <!-- Footer-->
         <footer class="footer text-center">
@@ -80,26 +79,25 @@
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Location</h4>
                         <p class="lead mb-0">
-                            Medan 22156
+                            Jalan K.H. Wahid Hasyim 15 Medan 20154
+                            Telp. (061) 4512305, Fax (061) 4521053
                             <br />
                             Sumatera Utara
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Sosial Media</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                    
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0470538948475!2d98.65513911457738!3d3.57665859739721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312fd43553ce49%3A0xa2b9768876f7de81!2sBTKLPP%20KELAS%201%20MEDAN!5e0!3m2!1sid!2sid!4v1605447650745!5m2!1sid!2sid" width="400" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About BTKLPP</h4>
+                        <h4 class="text-uppercase mb-4">Email BTKLPP</h4>
                         <p class="lead mb-0">
-                            BTKLPP
-                            <a href="#">BTKLPP</a>
-                            .
+                            btklppmmmdn@yahoo.co.id
+                            
+                        
                         </p>
                     </div>
                 </div>
