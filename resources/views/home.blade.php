@@ -225,37 +225,37 @@
 
             {{-- link terkait --}}
             <section class="page-section portfolio" id="contact">
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Link Terkait</h2>
+                <h2 class=" text-center text-uppercase text-secondary mb-0">Link Terkait</h2>
                 <br>
                <div class="row justify-content-center">
-                <div class="card" style="width: 15rem;">
+                <div class="card" style="width: 5rem;">
                     <a href="http://monev.anggaran.kemenkeu.go.id/smart/">
                         <img class="card-img-top" src="{{ asset('tes/img/logolink/smart.png') }}" alt="">
                     </a>
                    
                 </div>
-                <div class="card" style="width: 15rem;">
+                <div class="card" style="width: 5rem;">
                     <a href="https://spanint.kemenkeu.go.id/spanint/latest/app/">
                         <img class="card-img-top" src="{{ asset('tes/img/logolink/span.png') }}" alt="">
                     </a>
                     
              </div>
-             <div class="card" style="width: 15rem;">
+             <div class="card" style="width: 5rem;">
                 <a href="https://www.bappenas.go.id/id/">
                     <img class="card-img-top" src="{{ asset('tes/img/logolink/ppn.png') }}" alt="">
                 </a>
          </div>
-             <div class="card" style="width: 15rem;">
+             <div class="card" style="width: 5rem;">
             <a href="https://lpse.lkpp.go.id/eproc4">
                 <img class="card-img-top" src="{{ asset('tes/img/logolink/lpse.png') }}" alt="">
             </a>
         </div>
-           <div class="card" style="width: 15rem;">
+           <div class="card" style="width: 5rem ;">
             <a href="https://e-rekon-lk.kemenkeu.go.id/login">
                 <img class="card-img-top" src="{{ asset('tes/img/logolink/erekon.jpg') }}" alt="">
            </a>
         </div>
-           <div class="card" style="width: 15rem;">
+           <div class="card" style="width: 5rem height: 5rem;">
             <a href="https://ropeg.kemkes.go.id/">
                 <img class="card-img-top" src="{{ asset('tes/img/logolink/biro.png') }}" alt="">
             </a>
