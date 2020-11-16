@@ -50,40 +50,21 @@
 @endsection
 
 @section('content')
-<div class="container d-flex align-items-center flex-column" style="padding-top: 85px">
-    <div class="alert alert-info">
-        <h2> <strong>Pengumuman</strong>  </h2>
-    </div>
-</div>
-
-    <div class="container d-flex align-items-center flex-column" style="padding-top: 10px">
+    <div class="container d-flex align-items-center flex-column">
     
-        <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">Waktu</th>
-                <th scope="col">Kegiatan</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Rabu, 23 Desember 2020</td>
-                <td>Gerak Jalan Sehat</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Kamis, 23 Februari 2021</td>
-                <td>Sosialiasi Kesehatan</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Selasa, 23 Agustus 2021</td>
-                <td>Talk show cara hidup sehat</td>
-              </tr>
-            </tbody>
-          </table>
+    <div class="alert alert-info" style="margin: 8%">
+            <h2> <strong>Visi</strong>  </h2>
+            <h4>
+                Visi Kementerian Kesehatan yaitu ”Masyarakat Sehat Yang Mandiri dan Berkeadillan”.
+                </h4>
+                <br>
+                <h2> <strong>Misi</strong>  </h2>
+                <pre class="masthead-subheading font-weight-light mb-5">
+                  1.  Meningkatkan derajat kesehatan masyarakat melalui pemberdayaan masyarakat, termasuk swasta dan masyarakat madani
+                  2.  Melindungi kesehatan masyarakat dengan menjamin tersedianya upaya kesehatan yang paripurna, merata, bermutu dan berkeadilan
+                  3.  Menjamin ketersediaan dan pemerataan sumberdaya kesehatan
+                  4.  Menciptakan tata kelola kepemerintahan yang baik
+                </pre>
                
                
     </div>

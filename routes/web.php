@@ -37,8 +37,8 @@ Route::get('/tatausaha', function () {
     return view('tatausaha');
 });
 
-Route::get('/surverilans', function () {
-    return view('surverilans');
+Route::get('/surveilans', function () {
+    return view('surveilans');
 });
 
 Route::get('/adkl', function () {
@@ -47,6 +47,14 @@ Route::get('/adkl', function () {
 
 Route::get('/ptl', function () {
     return view('ptl');
+});
+
+Route::get('/wilayahkerja', function () {
+    return view('wilayahkerja');
+});
+
+Route::get('/visimisi', function () {
+    return view('visimisi');
 });
 
 Route::get('/wbs', function () {

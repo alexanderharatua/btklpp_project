@@ -1,4 +1,52 @@
 @extends('layouts.master')
+@section('navbar')
+<nav class="navbar navbar-expand-lg bg-info text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="{{ url('/index') }}">BTKLPP - Medan</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown mx-0 mx-lg-1">
+                    <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Struktur
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ url('/tatausaha') }}">Tata Usaha</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{{ url('/surveilans') }}">SE (SURVEILANS EPIDOMOLOGI)</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{{ url('/adkl') }}">ADKL</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{{ url('/ptl') }}">PTL</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Agenda</a></li>
+                  <li class="nav-item dropdown mx-0 mx-lg-1">
+                        <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Profile
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a  href="{{ url('/visimisi') }}" class="dropdown-item ">
+                                    Visi & Misi
+                                </a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{{ url('/wilayahkerja') }}">Wilayah Kerja</a>
+                        </div>
+                  </li>
+
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Buletin</a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3" href="{{ url('/berita') }}">Berita</a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3" href="{{ url('/pengumuman') }}">Pengumuman</a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3" href="{{ url('/download') }}">Download</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+@endsection
 
 @section('content')
        <!-- Masthead-->
@@ -20,101 +68,104 @@
 
         </div>
     </header>
-    <!-- Portfolio Section-->
+    <!-- Agenda Section-->
     <section class="page-section portfolio" id="portfolio">
-        <div class="container">
-            <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Agenda</h2>
-            <!-- Icon Divider-->    
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div>
+                    <h4 class="text-center text-uppercase text-secondary mb-0">Link Terkait</h4>
+                    
+                    <section id="contact"> 
+                        <br>             
+                       <div class="row justify-content-center">
+                        <div class="card" style="width: 5rem;">
+                            <a href="http://monev.anggaran.kemenkeu.go.id/smart/">
+                                <img class="card-img-top" src="{{ asset('tes/img/logolink/smart.png') }}" alt="">
+                            </a>
+                           
+                        </div>
+                        <div class="card" style="width: 5rem;">
+                            <a href="https://spanint.kemenkeu.go.id/spanint/latest/app/">
+                                <img class="card-img-top" src="{{ asset('tes/img/logolink/span.png') }}" alt="">
+                            </a>
+                            
+                     </div>
+                     <div class="card" style="width: 5rem;">
+                        <a href="https://www.bappenas.go.id/id/">
+                            <img class="card-img-top" src="{{ asset('tes/img/logolink/ppn.png') }}" alt="">
+                        </a>
+                 </div>
+                     <div class="card" style="width: 5rem;">
+                    <a href="https://lpse.lkpp.go.id/eproc4">
+                        <img class="card-img-top" src="{{ asset('tes/img/logolink/lpse.png') }}" alt="">
+                    </a>
+                </div>
+                   <div class="card" style="width: 5rem ;">
+                    <a href="https://e-rekon-lk.kemenkeu.go.id/login">
+                        <img class="card-img-top" src="{{ asset('tes/img/logolink/erekon.jpg') }}" alt="">
+                   </a>
+                </div>
+                   <div class="card" style="width: 5rem height: 5rem;">
+                    <a href="https://ropeg.kemkes.go.id/">
+                        <img class="card-img-top" src="{{ asset('tes/img/logolink/biro.png') }}" alt="">
+                    </a>
+                </div>
+                 </section>
+
+
+               </div>
             </div>
-            <!-- Portfolio Grid Items-->
-            <div class="row justify-content-center">
-                <!-- Portfolio Item 1-->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="{{ asset('tes/img/portfolio/satu.jpg')}}" alt="" />
-                    </div>
-                </div>
-                <!-- Portfolio Item 2-->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="{{asset('tes/img/portfolio/dua.jpg')}}" alt="" />
-                    </div>
-                </div>
-                <!-- Portfolio Item 3-->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="{{asset('tes/img/portfolio/tiga.jpg')}}" alt="" />
-                    </div>
-                </div>
-                <!-- Portfolio Item 4-->
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="{{asset('tes/img/portfolio/gambar.jpg')}}" alt="" />
-                    </div>
-                </div>  
-                <!-- Portfolio Item 5-->
-                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="{{asset('tes/img/portfolio/empat.jpg')}}" alt="" />
-                    </div>
-                </div>
-                <!-- Portfolio Item 6-->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="tes/img/portfolio/lima.jpg" alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- About Section-->
-    <section class="page-section bg-primary text-white mb-0" id="about">
-        <div class="container">
-            <!-- About Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-white">Profile</h2>
-            <!-- Icon Divider-->
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- About Section Content-->
-            <div class="row">
-                <div class="col-lg-4 ml-auto"><p class="lead">Kegiatan Balai Teknik Kesehatan Lingkungan Pengendalian Penyakit (BTKL-PP) Kesehatan
-                     mencakup tiga aspek yaitu aspek kegiatan kesehatan, aspek lingkungan dan aspek regional.</p></div>
-                <div class="col-lg-4 mr-auto"><p class="lead">VISI:
-                    Masyarakat sehat yang mandiri dan berkeadilan.
-                </p></div>
-            </div>
-            <!-- About Section Button-->
-            
+
+            <div class="col-sm-6">
+                <div>
+                    <h4 class="text-center text-uppercase text-secondary mb-0">Agenda</h4>
+                    <br>
+                   
+                    <div class="row justify-content-center">
+                        <!-- Portfolio Item 1-->
+                        <div class="row justify-content-center">
+                            <!-- Portfolio Item 1-->
+                            <div class="col-md-6 col-lg-5 mb-5">
+                                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid" src="{{ asset('tes/img/portfolio/satu.jpg')}}" alt="" />
+                                </div>
+                            </div>
+                            <!-- Portfolio Item 2-->
+                            <div class="col-md-6 col-lg-5 mb-5">
+                                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid" src="{{asset('tes/img/portfolio/dua.jpg')}}" alt="" />
+                                </div>
+                            </div>
+                            <!-- Portfolio Item 3-->
+                            <div class="col-md-6 col-lg-5 mb-5">
+                                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid" src="{{asset('tes/img/portfolio/tiga.jpg')}}" alt="" />
+                                </div>
+                            </div>
+                            <!-- Portfolio Item 4-->
+                            <div class="col-md-6 col-lg-5 mb-5">
+                                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid" src="{{asset('tes/img/portfolio/lima.jpg')}}" alt="" />
+                                </div>
+                       </div>  
+               </div>
+            </div>           
         </div>
     </section>
     <!-- Contact Section-->
-    <section class="page-section portfolio" id="contact">
+    <section class="page-section portfolio" id="contact" style="padding-top: 10px">
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Buletin</h2>
         <br>
        <div class="row justify-content-center">
@@ -156,45 +207,7 @@
         <!-- Contact Section Form-->
 
         {{-- link terkait --}}
-        <section class="page-section portfolio" id="contact">
-            <h2 class=" text-center text-uppercase text-secondary mb-0">Link Terkait</h2>
-            <br>
-           <div class="row justify-content-center">
-            <div class="card" style="width: 5rem;">
-                <a href="http://monev.anggaran.kemenkeu.go.id/smart/">
-                    <img class="card-img-top" src="{{ asset('tes/img/logolink/smart.png') }}" alt="">
-                </a>
-               
-            </div>
-            <div class="card" style="width: 5rem;">
-                <a href="https://spanint.kemenkeu.go.id/spanint/latest/app/">
-                    <img class="card-img-top" src="{{ asset('tes/img/logolink/span.png') }}" alt="">
-                </a>
-                
-         </div>
-         <div class="card" style="width: 5rem;">
-            <a href="https://www.bappenas.go.id/id/">
-                <img class="card-img-top" src="{{ asset('tes/img/logolink/ppn.png') }}" alt="">
-            </a>
-     </div>
-         <div class="card" style="width: 5rem;">
-        <a href="https://lpse.lkpp.go.id/eproc4">
-            <img class="card-img-top" src="{{ asset('tes/img/logolink/lpse.png') }}" alt="">
-        </a>
-    </div>
-       <div class="card" style="width: 5rem ;">
-        <a href="https://e-rekon-lk.kemenkeu.go.id/login">
-            <img class="card-img-top" src="{{ asset('tes/img/logolink/erekon.jpg') }}" alt="">
-       </a>
-    </div>
-       <div class="card" style="width: 5rem height: 5rem;">
-        <a href="https://ropeg.kemkes.go.id/">
-            <img class="card-img-top" src="{{ asset('tes/img/logolink/biro.png') }}" alt="">
-        </a>
-    </div>
-     </section>
-
-    </div>
+      
 
      <!-- Portfolio Modals-->
         <!-- Portfolio Modal 1-->
