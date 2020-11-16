@@ -33,6 +33,22 @@ Route::get('/download', function () {
     return view('download');
 });
 
+Route::get('/tatausaha', function () {
+    return view('tatausaha');
+});
+
+Route::get('/surverilans', function () {
+    return view('surverilans');
+});
+
+Route::get('/adkl', function () {
+    return view('adkl');
+});
+
+Route::get('/ptl', function () {
+    return view('ptl');
+});
+
 Route::get('/wbs', function () {
     return view('wbs');
 });

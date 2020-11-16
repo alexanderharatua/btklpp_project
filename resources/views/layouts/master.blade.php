@@ -15,7 +15,6 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ asset('/css/styles.css') }}" rel="stylesheet" />
-        
     </head>
     <body id="page-top">
         <script>
@@ -40,18 +39,30 @@
                               Struktur
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="#">Tata Usaha</a>
+                              <a class="dropdown-item" href="{{ url('/tatausaha') }}">Tata Usaha</a>
                               <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="#">SE (SURVEILANS EPIDOMOLOGI)</a>
+                              <a class="dropdown-item" href="{{ url('/surveilans') }}">SE (SURVEILANS EPIDOMOLOGI)</a>
                               <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="#">ADKL</a>
+                              <a class="dropdown-item" href="{{ url('/adkl') }}">ADKL</a>
                               <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="#">PTL</a>
+                              <a class="dropdown-item" href="{{ url('/ptl') }}">PTL</a>
                             </div>
                           </li>
 
                           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Agenda</a></li>
-                          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
+                          <li class="nav-item dropdown mx-0 mx-lg-1">
+                                <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Profile
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a  href="#" class="dropdown-item ">
+                                            profile
+                                        </a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#">Visi & Misi</a>
+                                </div>
+                          </li>
+
                           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Buletin</a></li>
                           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3" href="{{ url('/berita') }}">Berita</a></li>
                           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3" href="{{ url('/pengumuman') }}">Pengumuman</a></li>
@@ -75,6 +86,7 @@
         <footer class="footer text-center">
             <div class="container">
                 <div class="row">
+                        
                     <!-- Footer Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">BTKLPP Kelas I Medan</h4>
@@ -99,6 +111,24 @@
                             
                         
                         </p>
+                        <br>
+                        <br>
+                        <br>
+                         <div>
+                              <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
+                                        <!-- Histats.com  START  (aync)-->
+                                        <script type="text/javascript">var _Hasync= _Hasync|| [];
+                                        _Hasync.push(['Histats.start', '1,4478951,4,4005,112,61,00011111']);
+                                        _Hasync.push(['Histats.fasi', '1']);
+                                        _Hasync.push(['Histats.track_hits', '']);
+                                        (function() {
+                                        var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+                                        hs.src = ('//s10.histats.com/js15_as.js');
+                                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+                                        })();</script>
+                                        <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4478951&101" alt="" border="0"></a></noscript>
+                                        <!-- Histats.com  END  -->
+                             </div>
                     </div>
                 </div>
             </div>
