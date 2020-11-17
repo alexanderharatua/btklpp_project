@@ -1,3 +1,10 @@
+<style>
+        @media only screen and (max-width: 768px) {
+        .tes {
+            padding-top: 30%; padding-bottom:70%
+        }
+        }
+    </style>
 @extends('layouts.master')
 @section('navbar')
 <nav class="navbar navbar-expand-lg bg-info text-uppercase fixed-top" id="mainNav">
@@ -38,7 +45,7 @@
                         </div>
                   </li>
 
-                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Buletin</a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#buletin">Buletin</a></li>
                   <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3" href="{{ url('/berita') }}">Berita</a></li>
                   <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3" href="{{ url('/pengumuman') }}">Pengumuman</a></li>
                   <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3" href="{{ url('/download') }}">Download</a></li>
@@ -50,7 +57,7 @@
 
 @section('content')
        <!-- Masthead-->
-       <header class="bg-primary text-black text-center" style="padding-top: 80px">
+    <header class="bg-primary text-black text-center  tes" style="padding-top: 10%; padding-bottom:10%">
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Avatar Image-->
             <!-- Masthead Heading-->
@@ -71,46 +78,47 @@
     <!-- Agenda Section-->
     <section class="page-section portfolio" id="portfolio">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-5">
                 <div>
                     <h4 class="text-center text-uppercase text-secondary mb-0">Link Terkait</h4>
                     
                     <section id="contact"> 
                         <br>             
+                        
                        <div class="row justify-content-center">
-                        <div class="card" style="width: 5rem;">
-                            <a href="http://monev.anggaran.kemenkeu.go.id/smart/">
-                                <img class="card-img-top" src="{{ asset('tes/img/logolink/smart.png') }}" alt="">
-                            </a>
-                           
-                        </div>
-                        <div class="card" style="width: 5rem;">
-                            <a href="https://spanint.kemenkeu.go.id/spanint/latest/app/">
-                                <img class="card-img-top" src="{{ asset('tes/img/logolink/span.png') }}" alt="">
-                            </a>
+                             <center>
+                                <a href="http://monev.anggaran.kemenkeu.go.id/smart/">
+                                    <img style="width:30%" class="card-img-top" src="{{ asset('tes/img/logolink/smart.png') }}" alt="">
+                                </a>
                             
-                     </div>
-                     <div class="card" style="width: 5rem;">
-                        <a href="https://www.bappenas.go.id/id/">
-                            <img class="card-img-top" src="{{ asset('tes/img/logolink/ppn.png') }}" alt="">
-                        </a>
-                 </div>
-                     <div class="card" style="width: 5rem;">
-                    <a href="https://lpse.lkpp.go.id/eproc4">
-                        <img class="card-img-top" src="{{ asset('tes/img/logolink/lpse.png') }}" alt="">
-                    </a>
-                </div>
-                   <div class="card" style="width: 5rem ;">
-                    <a href="https://e-rekon-lk.kemenkeu.go.id/login">
-                        <img class="card-img-top" src="{{ asset('tes/img/logolink/erekon.jpg') }}" alt="">
-                   </a>
-                </div>
-                   <div class="card" style="width: 5rem height: 5rem;">
-                    <a href="https://ropeg.kemkes.go.id/">
-                        <img class="card-img-top" src="{{ asset('tes/img/logolink/biro.png') }}" alt="">
-                    </a>
-                </div>
-                 </section>
+                            <br>
+                            
+                                <a href="https://spanint.kemenkeu.go.id/spanint/latest/app/">
+                                    <img style="width:20%" class="card-img-top" src="{{ asset('tes/img/logolink/span.png') }}" alt="">
+                                </a>
+                            
+                            <br>
+                            
+                                <a href="https://www.bappenas.go.id/id/">
+                                    <img style="width:30%" class="card-img-top" src="{{ asset('tes/img/logolink/ppn.png') }}" alt="">
+                                </a>
+                            
+                            <br>
+                                <a href="https://lpse.lkpp.go.id/eproc4">
+                                    <img style="width:30%" class="card-img-top" src="{{ asset('tes/img/logolink/lpse.png') }}" alt="">
+                                </a>
+                            <br>
+                            
+                                <a href="https://e-rekon-lk.kemenkeu.go.id/login">
+                                    <img style="width:30%" class="card-img-top" src="{{ asset('tes/img/logolink/erekon.jpg') }}" alt="">
+                                </a>
+                            
+                            <br>
+                                <a href="https://ropeg.kemkes.go.id/">
+                                    <img style="width:30%" class="card-img-top" src="{{ asset('tes/img/logolink/biro.png') }}" alt="">
+                                </a>
+                             </center>
+                    </section>
 
 
                </div>
@@ -120,11 +128,12 @@
                 <div>
                     <h4 class="text-center text-uppercase text-secondary mb-0">Agenda</h4>
                     <br>
-                   
-                    <div class="row justify-content-center">
-                        <!-- Portfolio Item 1-->
+                    <iframe width="100%" height="500px"
+                    src="https://www.youtube.com/embed/2kBnfJ88EUE">
+                    </iframe> 
+                    <!--<div class="row justify-content-center">
+                         Portfolio Item 1
                         <div class="row justify-content-center">
-                            <!-- Portfolio Item 1-->
                             <div class="col-md-6 col-lg-5 mb-5">
                                 <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
                                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -133,7 +142,6 @@
                                     <img class="img-fluid" src="{{ asset('tes/img/portfolio/satu.jpg')}}" alt="" />
                                 </div>
                             </div>
-                            <!-- Portfolio Item 2-->
                             <div class="col-md-6 col-lg-5 mb-5">
                                 <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
                                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -142,7 +150,6 @@
                                     <img class="img-fluid" src="{{asset('tes/img/portfolio/dua.jpg')}}" alt="" />
                                 </div>
                             </div>
-                            <!-- Portfolio Item 3-->
                             <div class="col-md-6 col-lg-5 mb-5">
                                 <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
                                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -151,7 +158,6 @@
                                     <img class="img-fluid" src="{{asset('tes/img/portfolio/tiga.jpg')}}" alt="" />
                                 </div>
                             </div>
-                            <!-- Portfolio Item 4-->
                             <div class="col-md-6 col-lg-5 mb-5">
                                 <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
                                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -160,18 +166,21 @@
                                     <img class="img-fluid" src="{{asset('tes/img/portfolio/lima.jpg')}}" alt="" />
                                 </div>
                        </div>  
+                       -->
                </div>
             </div>           
         </div>
     </section>
     <!-- Contact Section-->
-    <section class="page-section portfolio" id="contact" style="padding-top: 10px">
+    <section class="page-section portfolio" id="buletin" style="padding-top: 10px">
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Buletin</h2>
         <br>
        <div class="row justify-content-center">
-        <div class="card col-md-6 col-lg-4 mb-5" style="width: 15rem;">
-            <div>
-                 <img src="{{ asset('tes/img/portfolio/buletin_dbd.jpg')}}" alt="Card image cap">
+        <div class="card col-md-5 col-lg-4 mb-5" style="width: 15rem;">
+            <div><br>
+                 <center>
+                     <img src="{{ asset('tes/img/portfolio/buletin_dbd.jpg')}}" alt="Card image cap" style="width:100%">
+                 </center>
                     <div class="card-body">
                       <h5 class="card-title">Demam Berdarah</h5>
                       <p class="card-text">Demam Berdarah Dengue banyak ditemukan di daerah tropis dan sub-tropis. Data dari...
@@ -180,9 +189,10 @@
                   </div>
             </div>
         </div>
-        <div class="card col-md-6 col-lg-4 mb-5" style="width: 15rem;">
+        <div class="card col-md-5 col-lg-4 mb-5" style="width: 15rem;">
             <div>
-                <img src="{{ asset('tes/img/portfolio/buletin_pnu.png')}}" alt="Card image cap">
+                <br>
+                <img src="{{ asset('tes/img/portfolio/buletin_pnu.png')}}" alt="Card image cap" style="width:100%">
                     <div class="card-body">
                       <h5 class="card-title">Pneumonia</h5>
                       <p class="card-text">Pneumonia adalah penyakit infeksi menular yang merupakan penyebab utama kematian pada balita di dunia...</p>
@@ -408,4 +418,5 @@
                 </div>
             </div>
         </div>
+    </div>
 @endsection
