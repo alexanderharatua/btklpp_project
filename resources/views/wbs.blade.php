@@ -68,7 +68,7 @@
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                             <label for="inputEmail4">Email</label>
-                            <input name="email" class="form-control" id="inputEmail4" placeholder="Email" type="email">
+                            <input name="email" class="form-control" id="inputEmail4" placeholder="Email" type="email" required="required">
                             {{-- <input class="form-control" id="inputEmail4" type="email" placeholder="Alamat Email" required="required" /> --}}
                             <p class="help-block text-danger"></p>
                         </div>
@@ -76,7 +76,7 @@
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                             <label for="inputPassword4">Nama</label>
-                            <input name="nama" class="form-control" id="inputPassword4" placeholder="Name" type="name">
+                            <input name="nama" class="form-control" id="inputPassword4" placeholder="Name" type="name" required="required" data-validation-required-message="Please enter your name.">
                             {{-- <input class="form-control" id="inputPassword4" type="text" placeholder="Nama" required="required" data-validation-required-message="Please enter your name." /> --}}
                             <p class="help-block text-danger"></p>
                         </div>

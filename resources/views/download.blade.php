@@ -67,31 +67,31 @@
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>Dokumen 1</td>
+                    <td>Undang-Undang No. 36 Tahun 2009 Tentang Kesehatan</td>
                     <td>pdf</td>
                     <td>
                         <center>
-                        <button type="button" class="btn btn-outline-danger">Download</button>
+                          <a href="{{ asset('/tes/img/file/uukesehatan.pdf') }}"><button type="button" class="btn btn-outline-danger">Download </button></a> 
                         </center>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>Dokumen 2</td>
+                    <td>Undang-Undang No. 36 Tahun 2014 Tentang Tenaga Kesehatan</td>
                     <td>pdf</td>
                     <td>
                         <center>
-                            <button type="button" class="btn btn-outline-danger">Download</button>
+                          <a href="{{ asset('/tes/img/file/uu36kesehatan.pdf') }}"><button type="button" class="btn btn-outline-danger">Download </button></a> 
                         </center>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td>Dokumen</td>
+                    <td>Undang-undang Nomor 25 Tahun 2009 Tentang Pelayanan Publik</td>
                     <td>pdf</td>
                     <td>
                         <center>
-                            <button type="button" class="btn btn-outline-danger">Download</button>
+                          <a href="{{ asset('/tes/img/file/undangpublik.pdf') }}"><button type="button" class="btn btn-outline-danger">Download </button></a> 
                         </center>
                     </td>
                   </tr>

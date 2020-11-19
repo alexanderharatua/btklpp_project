@@ -128,11 +128,13 @@
                 <div>
                     <h4 class="text-center text-uppercase text-secondary mb-0">Agenda</h4>
                     <br>
-                    <iframe width="100%" height="500px"
+                    <iframe width="100%" height="300px"
                     src="https://www.youtube.com/embed/2kBnfJ88EUE">
                     </iframe> 
-                    <!--<div class="row justify-content-center">
-                         Portfolio Item 1
+                    <br>
+                    <br>
+                    <div class="row justify-content-center">
+                         {{-- Portfolio Item 1 --}}
                         <div class="row justify-content-center">
                             <div class="col-md-6 col-lg-5 mb-5">
                                 <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
@@ -166,7 +168,7 @@
                                     <img class="img-fluid" src="{{asset('tes/img/portfolio/lima.jpg')}}" alt="" />
                                 </div>
                        </div>  
-                       -->
+                       
                </div>
             </div>           
         </div>
@@ -328,7 +330,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal4Label">Controller</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal4Label">Kegiatan</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
