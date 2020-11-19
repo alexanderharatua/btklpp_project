@@ -61,7 +61,7 @@
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
                     
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0470538948475!2d98.65513911457738!3d3.57665859739721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312fd43553ce49%3A0xa2b9768876f7de81!2sBTKLPP%20KELAS%201%20MEDAN!5e0!3m2!1sid!2sid!4v1605447650745!5m2!1sid!2sid" width="400" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0470538948475!2d98.65513911457738!3d3.57665859739721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312fd43553ce49%3A0xa2b9768876f7de81!2sBTKLPP%20KELAS%201%20MEDAN!5e0!3m2!1sid!2sid!4v1605447650745!5m2!1sid!2sid" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                         
                     </div>
                     <!-- Footer About Text-->
