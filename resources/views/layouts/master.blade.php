@@ -77,6 +77,7 @@
                         <br>
                          <div>
                               <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
+                              <div class="powr-hit-counter" id="d2a4bb5b_1605793420"></div><script src="https://www.powr.io/powr.js?platform=embed"></script>
                                         <!-- Histats.com  START  (aync)-->
                                         <script type="text/javascript">var _Hasync= _Hasync|| [];
                                         _Hasync.push(['Histats.start', '1,4478951,4,4005,112,61,00011111']);
@@ -87,7 +88,7 @@
                                         hs.src = ('//s10.histats.com/js15_as.js');
                                         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
                                         })();</script>
-                                        <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4478951&101" alt="" border="0"></a></noscript>
+                                        <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4478951&101" alt="" height="25px" width="25px"></a></noscript>
                                         <!-- Histats.com  END  -->
                              </div>
                     </div>

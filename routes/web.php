@@ -57,6 +57,10 @@ Route::get('/visimisi', function () {
     return view('visimisi');
 });
 
+Route::get('/agenda', function () {
+    return view('agenda');
+});
+
 Route::get('/wbs', function () {
     return view('wbs');
 });
