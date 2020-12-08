@@ -10,16 +10,17 @@ class MailController extends Controller
    
     public function send(Request $request)
     {   
-        $email = $request->input('email');
+        $email = $request->input('email'); // nama
         $to = $request->input('to');
         $name = $request->input('nama');
         $text = $request->input('text');
         $isi = $request->input('isi');
         $data = array('name' => $name, 'to' => $to);
-        Mail::raw('from : '.$email.' nama : >>>>>'.$name. ' >>>>>>> Isi pengaduan: '.$isi, function($message) use ($data){
+        Mail::send([],[], function($message) use ($data, $email,$name,$isi){
         
-         $message->to($data['to'], 'Tutorials Point')->subject('Pengaduan');
-         $message->from('hihihihi@gmail.com', $data['name']);
+         $message->to($data['to'], 'Admin')->subject('Pengaduan');
+         $message->from('wbsbtklpp@gmail.com', $data['name']);
+         $message->setBody('<h1> Laporan Pengaduan </h1> <br>'.'from : '.$email.'<br> nama : '.$name. '<br>  Isi pengaduan: '.$isi,'text/html');
       });
       return redirect()->back() ->with('alert', 'Updated!');
     }
