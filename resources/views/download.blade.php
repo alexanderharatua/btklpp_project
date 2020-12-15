@@ -3,7 +3,7 @@
 @section('navbar')
 <nav class="navbar navbar-expand-lg bg-info text-uppercase fixed-top" id="mainNav">
   <div class="container">
-    <a class="navbar-brand js-scroll-trigger" href="{{ url('/index') }}"><img src="{{ asset('/tes/img/portfolio/logicil.png') }}" height="25px" width="25px"></a>
+   <a class="navbar-brand js-scroll-trigger" href="{{ url('/index') }}"><img src="{{ asset('/tes/img/portfolio/logicil.png') }}" height="25px" width="25px"></a>
       <a class="navbar-brand js-scroll-trigger" href="{{ url('/index') }}">BTKLPP - Medan</a>
       <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
@@ -66,36 +66,57 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                 <tr>
                     <th scope="row">1</th>
+                    <td>Tarif pengujian sampel di laboratorium BTKLPP Kelas I Medan</td>
+                    <td>xls</td>
+                    <td>
+                        <center>
+                          <a href="{{ asset('/tes/img/file/tarifbaru.xlsx') }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a> 
+                        </center>
+                    </td>
+                  </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Laporan Hasil Survei Kepuasan Pelangan</td>
+                    <td>pdf</td>
+                    <td>
+                        <center>
+                          <a href="{{ asset('/tes/img/file/KEPUASAN PELANGGAN 202019112020.pdf') }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a> 
+                        </center>
+                    </td>
+                  </tr>
+                   <tr>
+                    <th scope="row">3</th>
                     <td>Undang-Undang No. 36 Tahun 2009 Tentang Kesehatan</td>
                     <td>pdf</td>
                     <td>
                         <center>
-                          <a href="{{ asset('/tes/img/file/uukesehatan.pdf') }}"><button type="button" class="btn btn-outline-danger">Download </button></a> 
+                          <a href="{{ asset('/tes/img/file/uukesehatan.pdf') }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a> 
                         </center>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">2</th>
+                    <th scope="row">4</th>
                     <td>Undang-Undang No. 36 Tahun 2014 Tentang Tenaga Kesehatan</td>
                     <td>pdf</td>
                     <td>
                         <center>
-                          <a href="{{ asset('/tes/img/file/uu36kesehatan.pdf') }}"><button type="button" class="btn btn-outline-danger">Download </button></a> 
+                          <a href="{{ asset('/tes/img/file/uu36kesehatan.pdf') }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a> 
                         </center>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">3</th>
+                    <th scope="row">5</th>
                     <td>Undang-undang Nomor 25 Tahun 2009 Tentang Pelayanan Publik</td>
                     <td>pdf</td>
                     <td>
                         <center>
-                          <a href="{{ asset('/tes/img/file/undangpublik.pdf') }}"><button type="button" class="btn btn-outline-danger">Download </button></a> 
+                          <a href="{{ asset('/tes/img/file/undangpublik.pdf') }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a> 
                         </center>
                     </td>
                   </tr>
+
                 </tbody>
               </table>
         </div>

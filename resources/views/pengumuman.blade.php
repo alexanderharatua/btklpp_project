@@ -68,7 +68,16 @@
               </tr>
             </thead>
             <tbody>
+              @foreach ($announcements as $item)
               <tr>
+                <td>{{$item->no}}</td>
+
+                <td>{{$item->waktu}}</td>
+
+                <td>{{$item->kegiatan}}</td> 
+              </tr>
+              @endforeach
+              {{-- <tr>
                 <th scope="row">1</th>
                 <td>Rabu, 23 Desember 2020</td>
                 <td>Gerak Jalan Sehat</td>
@@ -82,7 +91,7 @@
                 <th scope="row">3</th>
                 <td>Selasa, 23 Agustus 2021</td>
                 <td>Talk show cara hidup sehat</td>
-              </tr>
+              </tr> --}}
             </tbody>
           </table>
                

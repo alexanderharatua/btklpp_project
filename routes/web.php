@@ -25,9 +25,13 @@ Route::get('/berita', function () {
     return view('berita');
 });
 
-Route::get('/pengumuman', function () {
-    return view('pengumuman');
-});
+// Route::get('/pengumuman', function () {
+//     return view('pengumuman');
+// });
+
+//
+Route::resource('/pengumuman','App\Http\Controllers\TampilpengumumanController');
+//
 
 Route::get('/download', function () {
     return view('download');
@@ -66,3 +70,9 @@ Route::get('/wbs', function () {
 });
 
 Route::post('/mails', 'App\Http\Controllers\MailController@send');
+
+Auth::routes();
+
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::resource('/admin/pengumuman/announcements',[App\Http\Controllers\AnnouncementController::class, 'index'])->name('create');
+Route::resource('/admin/pengumuman/announcements','App\Http\Controllers\AnnouncementController');

@@ -19,7 +19,7 @@ class MailController extends Controller
         Mail::send([],[], function($message) use ($data, $email,$name,$isi){
         
          $message->to($data['to'], 'Admin')->subject('Pengaduan');
-         $message->from('wbsbtklpp@gmail.com', $data['name']);
+         $message->from('btklppm2@ethereal.sg.rapidplex.com', $data['name']);
          $message->setBody('<h1> Laporan Pengaduan </h1> <br>'.'from : '.$email.'<br> nama : '.$name. '<br>  Isi pengaduan: '.$isi,'text/html');
       });
       return redirect()->back() ->with('alert', 'Updated!');
