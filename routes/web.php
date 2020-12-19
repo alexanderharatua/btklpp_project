@@ -21,7 +21,7 @@ Route::get('/index', function () {
     return view('home1');
 });
 
-Route::get('/berita', function () {
+Route::get('/kabarberita', function () {
     return view('berita');
 });
 
@@ -76,3 +76,5 @@ Auth::routes();
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::resource('/admin/pengumuman/announcements',[App\Http\Controllers\AnnouncementController::class, 'index'])->name('create');
 Route::resource('/admin/pengumuman/announcements','App\Http\Controllers\AnnouncementController');
+Route::resource('/admin/unduh/downloads','App\Http\Controllers\DownloadsController');
+Route::resource('/admin/berita/news','App\Http\Controllers\NewsController');

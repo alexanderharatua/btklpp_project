@@ -17,6 +17,14 @@
                     <a href="/admin/pengumuman/announcements"> 
                         <button class="btn btn-info btn-sm"><i class="fas fa-eye"></i> Pengumuman</button>
                       </a>
+
+                      <a href="/admin/unduh/downloads"> 
+                        <button class="btn btn-success btn-sm"><i class="fas fa-eye"></i> Download</button>
+                      </a>
+
+                      <a href="/admin/berita/news"> 
+                        <button class="btn btn-success btn-sm"><i class="fas fa-eye"></i> Berita</button>
+                      </a>
                 </div>
             </div>
         </div>

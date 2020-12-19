@@ -1,13 +1,13 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
+    {{-- <a href="../../index3.html" class="brand-link">
       <img src="{{ asset('/tes/img/portfolio/logicil.png') }}"
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">Admin BTKLPP Medan</span>
-    </a>
+    </a> --}}
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -17,7 +17,7 @@
           <img src="{{ asset('/tes/img/portfolio/logicil.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">BTKLPP Medan</a>
+          <a href="{{ url('/admin') }}" class="d-block">BTKLPP Medan</a>
         </div>
       </div>
 
