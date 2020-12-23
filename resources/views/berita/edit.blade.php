@@ -20,7 +20,7 @@
                             @if ($data->gambar)
                             <img id="original" src="{{asset('/berita/'.$data->gambar)}}" height="70" width="70">
                             @endif
-                            <input type="text" name="gambar" class="form-control" placeholder="" value="{{ $data->gambar }}">
+                            <input type="file" name="gambar" class="form-control" placeholder="" value="{{ $data->gambar }}">
                             <span class="text-danger">{{ $errors->first('gambar') }}</span>
                        </div>
                 <button type="submit" class="btn btn-default">Update</button>

@@ -6,6 +6,7 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use Redirect;
 use PDF;
+use File;
 
 class NewsController extends Controller
 {
@@ -108,46 +109,22 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $file = $request->file('gambar');
-        if($file != '')
-        {
-            $request->validate([
-                'judul_berita'      => 'required',
-                'isi_berita'        => 'required',
-                'gambar'            => 'required|image|mimes:jpeg,png,jpg,gif,svg,zip|max:2048',
-            ]);
+       $data = News::find($id);
 
-            // $file_name =$file->getClientOriginalName();
-            // $file->move(public_path('berita'), $file_name);
-            $new_name = $file->getClientOriginalName();
-            $destinationPath = (public_path('berita'));
-            $file->move($destinationPath, $new_name);
-        }
-        else
-        {
-            $request->validate([
-                'judul_berita'            => 'required',
-                'isi_berita'  => 'required',
-            ]);
-        }
+       $data->judul_berita = $request->input('judul_berita');
+       $data->isi_berita = $request->input('isi_berita');
 
-        // $update = ['judul_berita' => $request->judul_berita, 'isi_berita' => $request->isi_berita];
-        // if ($file = $request->file('gambar')) {
-        //     $destinationPath = (public_path('berita'));
-        //     $new_name = $file->getClientOriginalName();
-        //     $file->move($destinationPath, $new_name);
-        //      $update['gambar'] = "$new_name";
-        // }
+       if($request->hasFile('gambar')) {
+           $file = $request->file('gambar');
+           $new_name = $file->getClientOriginalName();
+           $destinationPath = (public_path('berita'));
+           $file->move($destinationPath, $new_name);
+           $data->gambar = $new_name;
 
-        // $update['judul_berita'] = $request->get('judul_berita');
-        // $update['isi_berita'] = $request->get('isi_berita');
+       }
 
-        $form_data = array(
-            'judul_berita'      => $request->judul_berita,
-            'isi_berita'        => $request->isi_berita,
-        );
+       $data->save();           // inilah method paling joss
 
-        News::whereId($id)->update($form_data);
         return Redirect::to('/admin/berita/news')
         ->with('success','Great! Product updated successfully');
     }

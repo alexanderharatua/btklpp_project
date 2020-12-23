@@ -16,14 +16,13 @@
                 <div class="form-group">
                     <label for="price">Jenis Dokumen:</label>
                 <input type="text" class="form-control" placeholder="Jenis Dokumen" name="jenis_dokumen" id="jenis_dokumen" value="{{$data->jenis_dokumen}}">
-                    </div>
+                </div>
                     <div class="form-group">
                         <label class="col-md-4 text-right">Select File</label>
                         <div class="col-md-8">
-                            <input type="file" name="file" id="file" value="{{$data->file}}">    
-                         
+                            <input type="file" name="file" id="file" value="{{$data->file}}">     
                         </div>
-                       </div>
+                    </div>
                 <button type="submit" class="btn btn-default">Update</button>
             </form>
 
