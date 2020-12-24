@@ -24,6 +24,5 @@
                             <span class="text-danger">{{ $errors->first('gambar') }}</span>
                        </div>
                 <button type="submit" class="btn btn-default">Update</button>
-            </form>
-
+        </form>
 @endsection

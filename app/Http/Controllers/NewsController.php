@@ -85,7 +85,7 @@ class NewsController extends Controller
     {
         $data = News::findOrFail($id);
 
-        return view('berita.edit', compact('data'));
+        return view('berita.show', compact('data'));
     }
 
     /**
@@ -120,7 +120,6 @@ class NewsController extends Controller
            $destinationPath = (public_path('berita'));
            $file->move($destinationPath, $new_name);
            $data->gambar = $new_name;
-
        }
 
        $data->save();           // inilah method paling joss

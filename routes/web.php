@@ -33,9 +33,7 @@ Route::get('/kabarberita', function () {
 Route::resource('/pengumuman','App\Http\Controllers\TampilpengumumanController');
 //
 
-Route::get('/download', function () {
-    return view('download');
-});
+Route::resource('/download','App\Http\Controllers\TampildownloadController');
 
 Route::get('/tatausaha', function () {
     return view('tatausaha');

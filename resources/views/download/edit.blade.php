@@ -19,9 +19,11 @@
                 </div>
                     <div class="form-group">
                         <label class="col-md-4 text-right">Select File</label>
-                        <div class="col-md-8">
-                            <input type="file" name="file" id="file" value="{{$data->file}}">     
-                        </div>
+                        @if ($data->file)
+                             <a href="{{asset('/tes/img/file/'.$data->file)}}"></a>
+                        @endif
+                        <input type="file" name="file" id="file" value="{{$data->file}}">     
+                        <span class="text-danger">{{ $errors->first('file') }}</span>
                     </div>
                 <button type="submit" class="btn btn-default">Update</button>
             </form>

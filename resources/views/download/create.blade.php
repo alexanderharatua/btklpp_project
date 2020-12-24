@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             <label for="price">Jenis Dokumen:</label>
-            <input type="text" class="form-control" placeholder="Kegiatan" name="jenis_dokumen" id="jenis_dokumen">
+            <input type="text" class="form-control" placeholder="Jenis Dokumen" name="jenis_dokumen" id="jenis_dokumen">
             </div>
             <div class="form-group">
                 <label class="col-md-4 text-right">Select File</label>

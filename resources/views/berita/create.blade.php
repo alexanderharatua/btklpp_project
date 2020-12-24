@@ -15,11 +15,11 @@
     </div>
         <div class="form-group">
         <label for="description">Isi Berita:</label>
-        <textarea class="form-control" col="4" name="isi_berita" id="isi_berita" placeholder="Enter Description"></textarea>
+        <textarea name="isi_berita" id="summernote" placeholder="Tulis berita" cols="100" rows="10"></textarea>
         {{-- <span class="text-danger">{{ $errors->first('isi_berita') }}</span> --}}
     </div>
         <div class="form-group">
-            <label for="price">Masukkan Gambar:</label>
+            <label for="price">Masukkan Gambar Headline Berita:</label>
             </div>
             <div class="form-group">
                 <label class="col-md-4 text-right">Select File</label>
@@ -30,3 +30,4 @@
     </form>
 
 @endsection
+

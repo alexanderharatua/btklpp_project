@@ -21,9 +21,11 @@ class DownloadsController extends Controller
 
     public function index()
     {
-        $data = Downloads::latest()->paginate(5);
-        return view('download.index', compact('data'))
-                    ->with('i',(request()->input('page',1) - 1) * 5);
+        $data = Downloads::all();
+        return view('download.index', ["data" => $data]);
+        // $data = Downloads::latest()->paginate(5);
+        // return view('download.index', compact('data'))
+        //             ->with('i',(request()->input('page',1) - 1) * 5);
     }
 
     /**
@@ -48,7 +50,7 @@ class DownloadsController extends Controller
             'no'            => 'required',
             'nama_dokumen'  => 'required',
             'jenis_dokumen' => 'required',
-            'file'          => 'required|file|mimes:doc,pdf,docx,zip',
+            'file'          => 'required|file|mimes:doc,xlsx,pdf,docx,zip',
         ]);
 
         $file = $request->file('file');
@@ -100,38 +102,22 @@ class DownloadsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = Downloads::find($id);
 
-        $file_name = $request->hidden_file;
-        $file = $request->file('file');
-        if($file != '')
-        {
-            $request->validate([
-                'no'            => 'required',
-                'nama_dokumen'  => 'required',
-                'jenis_dokumen' => 'required',
-                'file'          => 'required|file|mimes:doc,jpeg,pdf,docx,zip',
-            ]);
+        $data->no = $request->input('no');
+        $data->nama_dokumen = $request->input('nama_dokumen');
+        $data->jenis_dokumen = $request->input('jenis_dokumen');
 
-            $file_name =$file->getClientOriginalName();
-            $file->move(public_path('images'), $file_name);
-        }
-        else
-        {
-            $request->validate([
-                'no'            => 'required',
-                'nama_dokumen'  => 'required',
-                'jenis_dokumen' => 'required',
-            ]);
+        if($request->hasFile('file')) {
+            $file = $request->file('file');
+            $new_name = $file->getClientOriginalName();
+            $destinationPath = (public_path('tes/img/file'));
+            $file->move($destinationPath, $new_name);
+            $data->file = $new_name;
         }
 
-        $form_data = array(
-            'no'            => $request->no,
-            'nama_dokumen'  => $request->nama_dokumen,
-            'jenis_dokumen' => $request->jenis_dokumen,
-            'file'          => $file_name
-        );
-  
-        Downloads::whereId($id)->update($form_data);
+        $data->save();
+
 
         return redirect('/admin/unduh/downloads')->with('success', 'Data berhasil di update!');
     }

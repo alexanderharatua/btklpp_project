@@ -20,7 +20,8 @@
 
                 <td>{{$row->jenis_dokumen}}</td>
 
-                <td>{{$row->file}}</td>
+                <td>{{asset('images/'.$row->file)}}</td>
+                
                 <td>
                 <a href="/admin/unduh/downloads/{{ $row->id }}"> 
                   <button class="btn btn-info btn-sm"><i class="fas fa-eye"></i>Show</button>

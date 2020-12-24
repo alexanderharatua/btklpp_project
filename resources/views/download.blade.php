@@ -66,56 +66,20 @@
                   </tr>
                 </thead>
                 <tbody>
-                 <tr>
-                    <th scope="row">1</th>
-                    <td>Tarif pengujian sampel di laboratorium BTKLPP Kelas I Medan</td>
-                    <td>xls</td>
-                    <td>
-                        <center>
-                          <a href="{{ asset('/tes/img/file/tarifbaru.xlsx') }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a> 
-                        </center>
-                    </td>
-                  </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Laporan Hasil Survei Kepuasan Pelangan</td>
-                    <td>pdf</td>
-                    <td>
-                        <center>
-                          <a href="{{ asset('/tes/img/file/KEPUASAN PELANGGAN 202019112020.pdf') }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a> 
-                        </center>
-                    </td>
-                  </tr>
-                   <tr>
-                    <th scope="row">3</th>
-                    <td>Undang-Undang No. 36 Tahun 2009 Tentang Kesehatan</td>
-                    <td>pdf</td>
-                    <td>
-                        <center>
-                          <a href="{{ asset('/tes/img/file/uukesehatan.pdf') }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a> 
-                        </center>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Undang-Undang No. 36 Tahun 2014 Tentang Tenaga Kesehatan</td>
-                    <td>pdf</td>
-                    <td>
-                        <center>
-                          <a href="{{ asset('/tes/img/file/uu36kesehatan.pdf') }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a> 
-                        </center>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Undang-undang Nomor 25 Tahun 2009 Tentang Pelayanan Publik</td>
-                    <td>pdf</td>
-                    <td>
-                        <center>
-                          <a href="{{ asset('/tes/img/file/undangpublik.pdf') }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a> 
-                        </center>
-                    </td>
-                  </tr>
+                  @foreach ($downloads as $item)
+                      <tr>
+                        <th scope="row"> {{$item->no}} </th>
+                        <td>  {{$item->nama_dokumen}}  </td>
+                        <td>  {{$item->jenis_dokumen}}  </td>
+                        <td>
+                          <center>
+                            <a href="{{  asset('/images/'.$item->file)  }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a>
+                          </center>
+                          
+                        </td>
+                      </tr>
+                      
+                  @endforeach 
 
                 </tbody>
               </table>
