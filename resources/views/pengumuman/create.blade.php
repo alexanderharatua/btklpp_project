@@ -14,7 +14,7 @@
         </div>
         <div class="form-group">
         <label for="description">Waktu:</label>
-        <input type="text" class="form-control" placeholder="Waktu" name="waktu" id="waktu">
+        <input type="date" class="form-control" placeholder="Waktu" name="waktu" id="waktu">
         </div>
         <div class="form-group">
             <label for="price">Kegiatan:</label>

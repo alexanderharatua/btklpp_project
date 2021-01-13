@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsController;
 
+use  App\Http\Controllers\AnnouncementController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,8 +73,14 @@ Route::post('/mails', 'App\Http\Controllers\MailController@send');
 
 Auth::routes();
 
+Route::get('/admin/berita/news/destroy/{id}', [NewsController::class, 'destroy']);
+Route::get('/admin/berita/news/edit/{id}', [NewsController::class, 'edit']);
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::resource('/admin/pengumuman/announcements',[App\Http\Controllers\AnnouncementController::class, 'index'])->name('create');
 Route::resource('/admin/pengumuman/announcements','App\Http\Controllers\AnnouncementController');
 Route::resource('/admin/unduh/downloads','App\Http\Controllers\DownloadsController');
 Route::resource('/admin/berita/news','App\Http\Controllers\NewsController');
+Route::get('/admin/berita/news','App\Http\Controllers\NewsController@index');
+
+Route::get('/admin/berita/newss', [NewsController::class, 'data']);
+Route::get('/admin/pengumuman/annc', [AnnouncementController::class, 'data']);

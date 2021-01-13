@@ -1,44 +1,56 @@
 @extends('layouts.adminmaster')
+
 @section('content')
 <a href="/admin/berita/news/create" class="btn btn-primary mb-2">Tambahkan Berita Baru</a>
-<table class="table">
-    <thead>
-      <tr>
-        <th>Judul Berita</th>
-        <th>Isi Berita</th>
-        <th>Gambar</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-        @foreach ($news as $row)
-            <tr>
-                <td>{{$row->judul_berita}}</td>
-                <td>
-                  <?php
-                      echo $row->isi_berita
-                  ?>
-                </td>
+<table id="example1" class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>Judul Berita</th>
+    <th>Gambar</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Loading...</td>
+      <td>Loading...</td>
+      <td>Loading...</td>
+    </tr>
+ 
+  </tbody>
+  <tfoot>
+  <tr>
+    <th>Judul Berita</th>
+    <th>Gambar</th>
+    <th>Action</th>
+  </tr>
+  </tfoot>
+</table>
 
-                {{-- <td>{{$row->gambar}}</td> --}}
-            <td> <img src="{{asset('/berita/'.$row->gambar)}}" alt="" width="100px"></td>
+<script src="{{ asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- DataTables -->
+<script src="{{ asset('adminlte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{ asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{ asset('adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script>
+   var table = $("#example1").DataTable({
 
-                <td>
-                <a href="/admin/berita/news/{{ $row->id }}"> 
-                  <button class="btn btn-info btn-sm"><i class="fas fa-eye"></i>Show</button>
-                </a>
-                <a href="/admin/berita/news/{{ $row->id }}/edit"> 
-                  <button class="btn btn-success btn-sm"><i class="fas fa-edit"></i>Edit</button>
-                </a>
+        pageLength: 25,
+        processing: true,
+        serverSide: true,
+        ajax: "/admin/berita/newss",
+        columns: [
+            {"data":"judul_berita"},
+            {"data":"gambar"},
+            {
+                            "data": 'action',
+                            "name": 'action'
+                        }
+       ],
+    });
 
-                <form action="/admin/berita/news/{{$row->id}}" method="POST" style="display: inline">
-                  @csrf
-                  @method('DELETE')
-                  <button type="submit" class="btn btn-danger btn-sm" value="delete"><i class="fa fa-trash"></i>delete</button>
-                </form>
-                  </td>
-             </tr>
-        @endforeach
-    </tbody>
-  </table>
+</script>
 @endsection
