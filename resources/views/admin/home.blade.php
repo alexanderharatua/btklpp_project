@@ -23,7 +23,7 @@
                       </a>
 
                       <a href="/admin/berita/news"> 
-                        <button class="btn btn-success btn-sm"><i class="fas fa-eye"></i> Berita</button>
+                        <button class="btn btn-success btn-sm"><i class="fas fa-eye"></i> Beritaaa</button>
                       </a>
                 </div>
             </div>
