@@ -8,7 +8,7 @@
   
 <form action="/admin/unduh/downloads" method="POST" enctype="multipart/form-data">
     @csrf
-        <div class="form-group">
+        <div class="form-group"> 
         <label for="name">No:</label>
         <input type="text" class="form-control" placeholder="Masukkan Nomor Pengumuman" name="no" id="no">
         </div>

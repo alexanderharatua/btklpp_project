@@ -12,7 +12,7 @@
             </div>
                 <div class="form-group">
                 <label for="description">Isi Berita:</label>
-                <input type="text" class="form-control" placeholder="Input judul berita" name="isi_berita" id="isi_berita" value="{{$data->isi_berita}}">
+                <textarea name="isi_berita" id="summernote" placeholder="Tulis berita" cols="100" rows="10">{{$data->isi_berita}}</textarea>
                 <span class="text-danger">{{ $errors->first('isi_berita') }}</span>
             </div>
                     <div class="form-group">

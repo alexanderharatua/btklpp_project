@@ -5,9 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Announcements;
 
+
+use Yajra\DataTables\DataTables;
 class AnnouncementController extends Controller
 {
-
+    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    
+    public function __invoke(Request $request)
+    {
+        return "Welcome to our homepage";
+    }
     public function __construct()
     {
         $this->middleware('auth');
@@ -19,7 +31,32 @@ class AnnouncementController extends Controller
 
         return view('pengumuman.index', ["announcements" => $announcements]);
     }
+    public function data()
+    {
+            $data = Announcements::all();
+            return Datatables::of($data)
+                    
+                ->addColumn('action', function ($data) {
+                    return 
+                    " <a href='/admin/berita/news/$data->id' >
+                    <button type='submit' class='btn btn-primary btn-sm' value='delete'>
+                    <i class='fa fa-eye'></i></button>
+                    </a>
+                    
+                    <a href='/admin/berita/news/edit/$data->id'  >
+                    <button type='submit' class='btn btn-success btn-sm' value='delete'>
+                    <i class='fa fa-edit'></i></button>
+                    </a>
 
+                    <a href='/admin/berita/news/destroy/$data->id' >
+                    <button type='submit' class='btn btn-danger btn-sm' value='delete'>
+                    <i class='fa fa-trash'></i></button>
+                    </a>
+                    ";
+                    })
+                ->rawColumns(array("action"))
+                ->make(true);
+    }    
     /**
      * Show the form for creating a new resource.
      *

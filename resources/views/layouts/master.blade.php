@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ asset('/css/styles.css') }}" rel="stylesheet" />
+        @yield('css')
         <style>
             .video-fluid {
                 width: 100%;
@@ -119,6 +120,6 @@
         <script src="{{ asset('/js/scripts.js') }}"></script>
         <script src="{{ asset('/js/app.js') }}"></script>
         <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
-        
+        @yield('js')
     </body>
 </html>

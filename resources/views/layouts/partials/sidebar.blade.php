@@ -1,5 +1,4 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Brand Logo -->
     {{-- <a href="../../index3.html" class="brand-link">
       <img src="{{ asset('/tes/img/portfolio/logicil.png') }}"
