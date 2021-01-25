@@ -38,17 +38,17 @@ class AnnouncementController extends Controller
                     
                 ->addColumn('action', function ($data) {
                     return 
-                    " <a href='/admin/berita/news/$data->id' >
-                    <button type='submit' class='btn btn-primary btn-sm' value='delete'>
+                    " <a href='/admin/pengumuman/announcements/$data->id' >
+                    <button type='submit' class='btn btn-primary btn-sm' value='show'>
                     <i class='fa fa-eye'></i></button>
                     </a>
                     
-                    <a href='/admin/berita/news/edit/$data->id'  >
-                    <button type='submit' class='btn btn-success btn-sm' value='delete'>
+                    <a href='/admin/pengumuman/announcements/edit/$data->id' >
+                    <button type='submit' class='btn btn-success btn-sm' value='submit'>
                     <i class='fa fa-edit'></i></button>
                     </a>
 
-                    <a href='/admin/berita/news/destroy/$data->id' >
+                    <a href='/admin/pengumuman/announcements/destroy/$data->id' >
                     <button type='submit' class='btn btn-danger btn-sm' value='delete'>
                     <i class='fa fa-trash'></i></button>
                     </a>

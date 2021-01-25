@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Downloads;
 use Illuminate\Http\Request;
+use Redirect;
+use PDF;
+use File;
 
+use Yajra\DataTables\DataTables;
 
 class DownloadsController extends Controller
 {
@@ -21,11 +26,37 @@ class DownloadsController extends Controller
 
     public function index()
     {
-        $data = Downloads::all();
-        return view('download.index', ["data" => $data]);
+        return view('download.index');
         // $data = Downloads::latest()->paginate(5);
         // return view('download.index', compact('data'))
         //             ->with('i',(request()->input('page',1) - 1) * 5);
+    }
+
+    public function data()
+    {
+            $data = Downloads::all();
+            return Datatables::of($data)
+                    
+                ->addColumn('action', function ($data) {
+                    return 
+                    " <a href='/admin/unduh/downloads/$data->id' >
+                    <button type='submit' class='btn btn-primary btn-sm' value='show'>
+                    <i class='fa fa-eye'></i></button>
+                    </a>
+                    
+                    <a href='/admin/unduh/downloads/edit/$data->id'  >
+                    <button type='submit' class='btn btn-success btn-sm' value='submit'>
+                    <i class='fa fa-edit'></i></button>
+                    </a>
+
+                    <a href='/admin/unduh/downloads/destroy/$data->id' >
+                    <button type='submit' class='btn btn-danger btn-sm' value='delete'>
+                    <i class='fa fa-trash'></i></button>
+                    </a>
+                    ";
+                    })
+                ->rawColumns(array("action"))
+                ->make(true);
     }
 
     /**

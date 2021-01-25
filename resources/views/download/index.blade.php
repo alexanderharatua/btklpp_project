@@ -1,44 +1,63 @@
 @extends('layouts.adminmaster')
 @section('content')
+
 <a href="/admin/unduh/downloads/create" class="btn btn-primary mb-2">Tambahkan Pengumuman Baru</a>
-<table class="table">
-    <thead>
-      <tr>
-        <th>No</th>
-        <th>Nama Dokumen</th>
-        <th>Jenis Dokumen</th>
-        <th>File</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-        @foreach ($data as $row)
-            <tr>
-                <td>{{$row->no}}</td>
+<table id="example1" class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>No</th>
+    <th>Nama Dokumen</th>
+    <th>Jenis Dokumen</th>
+    <th>File</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Loading...</td>
+      <td>Loading...</td>
+      <td>Loading...</td>
+      <td>Loading...</td>
+      <td>Loading...</td>
+    </tr>
+ 
+  </tbody>
+  {{-- <tfoot>
+  <tr>
+    <th>Judul Berita</th>
+    <th>Gambar</th>
+    <th>Action</th>
+  </tr>
+  </tfoot> --}}
+</table>
 
-                <td>{{$row->nama_dokumen}}</td>
+  
+<script src="{{ asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- DataTables -->
+<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script src="{{ asset('adminlte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{ asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{ asset('adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script>
+  var table = $("#example1").DataTable({
 
-                <td>{{$row->jenis_dokumen}}</td>
+       processing: true,
+       serverSide: true,
+       ajax: "/admin/unduh/tes/tes",
+       columns: [
+            {"data":"no"},
+            {"data":"nama_dokumen"},
+            {"data":"jenis_dokumen"},
+            {"data":"file"},
+            {
+                            "data": 'action',
+                            "name": 'action'
+                        }
+       ],
+   });
 
-                <td>{{asset('images/'.$row->file)}}</td>
-                
-                <td>
-                <a href="/admin/unduh/downloads/{{ $row->id }}"> 
-                  <button class="btn btn-info btn-sm"><i class="fas fa-eye"></i>Show</button>
-                </a>
-
-                <a href="/admin/unduh/downloads/{{ $row->id }}/edit"> 
-                  <button class="btn btn-success btn-sm"><i class="fas fa-edit"></i>Edit</button>
-                </a>
-
-                <form action="/admin/unduh/downloads/{{$row->id}}" method="POST" style="display: inline">
-                  @csrf
-                  @method('DELETE')
-                  <button type="submit" class="btn btn-danger btn-sm" value="delete"><i class="fa fa-trash"></i>delete</button>
-                </form>
-                  </td>
-             </tr>
-        @endforeach
-    </tbody>
-  </table>
+</script>
 @endsection

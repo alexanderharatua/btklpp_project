@@ -75,6 +75,13 @@ Auth::routes();
 
 Route::get('/admin/berita/news/destroy/{id}', [NewsController::class, 'destroy']);
 Route::get('/admin/berita/news/edit/{id}', [NewsController::class, 'edit']);
+
+Route::get('/admin/pengumuman/announcements/destroy/{id}', [AnnouncementController::class, 'destroy']);
+Route::get('/admin/pengumuman/announcements/edit/{id}', [AnnouncementController::class, 'edit']);
+
+Route::get('/admin/unduh/downloads/destroy/{id}', [DownloadsController::class, 'destroy']);
+Route::get('/admin/unduh/downloads/edit/{id}', 'App\Http\Controllers\DownloadsController@edit');
+
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::resource('/admin/pengumuman/announcements',[App\Http\Controllers\AnnouncementController::class, 'index'])->name('create');
 Route::resource('/admin/pengumuman/announcements','App\Http\Controllers\AnnouncementController');
@@ -82,5 +89,7 @@ Route::resource('/admin/unduh/downloads','App\Http\Controllers\DownloadsControll
 Route::resource('/admin/berita/news','App\Http\Controllers\NewsController');
 Route::get('/admin/berita/news','App\Http\Controllers\NewsController@index');
 
+
 Route::get('/admin/berita/newss', [NewsController::class, 'data']);
 Route::get('/admin/pengumuman/annc', [AnnouncementController::class, 'data']);
+Route::get('/admin/unduh/tes/tes', 'App\Http\Controllers\DownloadsController@data');

@@ -18,13 +18,13 @@
     </tr>
  
   </tbody>
-  <tfoot>
+  {{-- <tfoot>
   <tr>
     <th>Judul Berita</th>
     <th>Gambar</th>
     <th>Action</th>
   </tr>
-  </tfoot>
+  </tfoot> --}}
 </table>
 
 <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
