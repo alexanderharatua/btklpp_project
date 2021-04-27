@@ -75,7 +75,6 @@
                           <center>
                             <a href="{{  asset('/images/'.$item->file)  }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a>
                           </center>
-                          
                         </td>
                       </tr>
                       

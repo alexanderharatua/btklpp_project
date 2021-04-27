@@ -2,7 +2,7 @@
 
 @section('content')
 
-        <form action="/admin/unduh/downloads/{{$data->id}}" method="POST" enctype="multipart/form-data">
+        <form action="/admin/unduh/downloads/{{$data->id}}" method="POST" enctype="multipart/form-data" id="EditArticleModal">
             @csrf
             @method('PATCH')
                 <div class="form-group">

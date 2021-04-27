@@ -15,15 +15,28 @@
                     @endif
 
                     <a href="/admin/pengumuman/announcements"> 
-                        <button class="btn btn-info btn-sm"><i class="fas fa-eye"></i> Pengumuman</button>
+                        <!-- <button class="btn btn-info btn-sm"><i class="fas fa-eye"></i> Pengumuman</button> -->
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block"><i class="fas fa-eye"></i> Pengumuman</button>
                       </a>
-
+                      <br>
                       <a href="/admin/unduh/downloads"> 
-                        <button class="btn btn-success btn-sm"><i class="fas fa-eye"></i> Download</button>
+                        <!-- <button class="btn btn-success btn-sm"><i class="fas fa-eye"></i> Download</button> -->
+                        <button type="button" class="btn btn-outline-warning btn-lg btn-block"><i class="fas fa-download"></i> Download</button>
                       </a>
-
+                    <br>
                       <a href="/admin/berita/news"> 
-                        <button class="btn btn-success btn-sm"><i class="fas fa-eye"></i> Beritaaa</button>
+                        <!-- <button class="btn btn-success btn-sm"><i class="fas fa-eye"></i> Beritaaa</button> -->
+                        <button type="button" class="btn btn-outline-success btn-lg btn-block"><i class="fas fa-pen"></i> Berita</button>
+                      </a>
+                      <br>
+                      <a href="/admin/agenda/agendas"> 
+                        <!-- <button class="btn btn-success btn-sm"><i class="fas fa-eye"></i> Beritaaa</button> -->
+                        <button type="button" class="btn btn-outline-success btn-lg btn-block"><i class="fas fa-pen"></i> Agenda</button>
+                      </a>
+                      <br>
+                      <a href="/admin/buletin/buletins"> 
+                        <!-- <button class="btn btn-success btn-sm"><i class="fas fa-eye"></i> Beritaaa</button> -->
+                        <button type="button" class="btn btn-outline-info btn-lg btn-block"><i class="fas fa-pen"></i> Buletin</button>
                       </a>
                 </div>
             </div>

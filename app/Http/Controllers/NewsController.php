@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Redirect;
 use PDF;
 use File;
-
+use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\DataTables;
 class NewsController extends Controller
 {
@@ -46,10 +46,8 @@ class NewsController extends Controller
                     <i class='fa fa-edit'></i></button>
                     </a>
 
-                    <a href='/admin/berita/news/destroy/$data->id' >
-                    <button type='submit' class='btn btn-danger btn-sm' value='delete'>
+                    <button type='button' name='delete' id='$data->id' class='delete btn btn-danger btn-sm'>
                     <i class='fa fa-trash'></i></button>
-                    </a>
                     ";
                     })
                 ->rawColumns(array("action"))
@@ -75,11 +73,23 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'judul_berita'      => 'required',
-            'isi_berita'        => 'required',
-            'gambar'            => 'required|image|mimes:jpeg,png,jpg,gif,svg,zip|max:2048',
+        $validator = Validator::make($request->all(), [
+            'judul_berita' => 'required',
+            'isi_berita'  => 'required',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg,zip|max:2048',
         ]);
+
+        if ($validator->fails()) {
+            return redirect('/admin/unduh/downloads/create')
+                            ->with('success', ' Gagal menambahkan berita,periksa gambar yang Anda upload!')
+                            ->withInput();
+        }
+
+        // $request->validate([
+        //     'judul_berita'      => 'required',
+        //     'isi_berita'        => 'required',
+        //     'gambar'            => 'required|image|mimes:jpeg,png,jpg,gif,svg,zip|max:2048',
+        // ]);
 
         // if($files = $request->file('image')) {
         //     $destinationPath = 'public/images/'; //upload path
@@ -103,7 +113,7 @@ class NewsController extends Controller
 
         News::insert($form_data);
         return Redirect::to('/admin/berita/news')
-        ->with('success','Great! Product created successfully');
+        ->with('success','Berita berhasil ditambahkan baru!');
     }
 
     /**
@@ -156,7 +166,7 @@ class NewsController extends Controller
        $data->save();           // inilah method paling joss
 
         return Redirect::to('/admin/berita/news')
-        ->with('success','Great! Product updated successfully');
+        ->with('success','Berita berhasil diupdate!');
     }
 
     /**
@@ -167,8 +177,8 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        News::where('id',$id)->delete();
-        return Redirect::to('/admin/berita/news')->with('success','Product deleted successfully');    
+        News::destroy($id);
+        return Redirect::to('/admin/berita/news')->with('success','Field berhasil dihapus!');    
         //return "he";
     }
 }

@@ -56,28 +56,29 @@
         <br><br>
         <div class="container">
         <div class="row justify-content-center" style="margin-bottom:5%">
-              <div class="col-md-4 col-sm-12 " >  
-                    <div class="card" style="height:720px">
-                        <div class="view overlay">
-                          <img class="card-img-top" src="{{ asset('tes/img/portfolio/logicil.png')}}" style="width="200" height="300px"">
-                        </div>
-                        <div class="card-body" >
-                            <h4 class="card-title" >
-                                Penyampaian Pelaksanaan PP RI No.64 tahun 2019 tentang Jenis dan Tarif atas PNBP di Lingkup Kementerian Kesehatan RI</h4>
-                            <hr>
-                            <p>
-                            Penyampaian Pelaksanaa di Lingkup Kementerian Kesehatan RI...
-                            <br>
-                            <i class="far fa-clock pr-1"></i>
-                                    05/10/2015
-                            </p>
-                            <button type="button" class="btn btn-outline-success">Read More</button>
-                           
-                        </div>
-                        
-                    </div>
-              </div>
-              <br>
+          @foreach ($news->slice(0, 10) as $item)
+          <div class="col-md-4 col-sm-12 " >  
+            <div class="card" style="height:620px">
+                <div class="view overlay">
+                  <img class="card-img-top" src="{{ asset('/berita/'.$item->gambar) }}" style= "width:200; height:300px">
+                </div>
+                <div class="card-body" >
+                    <h4 class="card-title" >
+                    {{ $item->judul_berita }}</h4>
+                    <!-- <hr>
+                    <span>
+                    <?php echo $item->judul_berita ?>
+                    <br>
+                    <i class="far fa-clock pr-1"></i>
+                            05/10/2015
+                    </span><br> -->
+                    <a href="/kabarberita/{{ $item->id }}"> <button type="button" class="btn btn-outline-success">Read More</button> </a>  
+                </div>    
+            </div><br>
+      </div>
+          @endforeach
+
+              {{-- <br>
               <div class="col-md-4 col-sm-12">         
                 <div class="card" style="height:720px" >
                     <div class="view overlay">
@@ -95,6 +96,8 @@
                        
                     </div>
                 </div>
-              </div>
+              </div> --}}
+
+              
         </div>
 @endsection

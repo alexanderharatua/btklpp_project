@@ -48,10 +48,8 @@ class AnnouncementController extends Controller
                     <i class='fa fa-edit'></i></button>
                     </a>
 
-                    <a href='/admin/pengumuman/announcements/destroy/$data->id' >
-                    <button type='submit' class='btn btn-danger btn-sm' value='delete'>
+                    <button type='button' name='delete' id='$data->id' class='delete btn btn-danger btn-sm'>
                     <i class='fa fa-trash'></i></button>
-                    </a>
                     ";
                     })
                 ->rawColumns(array("action"))
@@ -80,7 +78,7 @@ class AnnouncementController extends Controller
 
         $announcements = Announcements::create($request->all()); // tapi isi di model $fillable nya
 
-       return redirect('/admin/pengumuman/announcements');
+       return redirect('/admin/pengumuman/announcements')->with('success','Pengumuman selesai ditambahkan!');
     }
 
     /**
@@ -138,6 +136,6 @@ class AnnouncementController extends Controller
     public function destroy($id)
     {
         Announcements::destroy($id);
-        return redirect('/admin/pengumuman/announcements');
+        return redirect('/admin/pengumuman/announcements')->with('success','Field berhasil dihapus!');
     }
 }

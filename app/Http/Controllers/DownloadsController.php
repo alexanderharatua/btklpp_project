@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Downloads;
 use Illuminate\Http\Request;
-use Redirect;
+use Illuminate\Support\Facades\Validator;
+use Redirect, Response;
 use PDF;
 use File;
 
@@ -32,14 +33,15 @@ class DownloadsController extends Controller
         //             ->with('i',(request()->input('page',1) - 1) * 5);
     }
 
-    public function data()
+    public function data(Request $request)
     {
             $data = Downloads::all();
-            return Datatables::of($data)
+            if($request->ajax()){
+                return Datatables::of($data)
                     
                 ->addColumn('action', function ($data) {
-                    return 
-                    " <a href='/admin/unduh/downloads/$data->id' >
+                    return "
+                    <a href='/admin/unduh/downloads/$data->id' >
                     <button type='submit' class='btn btn-primary btn-sm' value='show'>
                     <i class='fa fa-eye'></i></button>
                     </a>
@@ -48,15 +50,17 @@ class DownloadsController extends Controller
                     <button type='submit' class='btn btn-success btn-sm' value='submit'>
                     <i class='fa fa-edit'></i></button>
                     </a>
-
-                    <a href='/admin/unduh/downloads/destroy/$data->id' >
-                    <button type='submit' class='btn btn-danger btn-sm' value='delete'>
+                   
+                    <button type='button' name='delete' id='$data->id' class='delete btn btn-danger btn-sm'>
                     <i class='fa fa-trash'></i></button>
-                    </a>
+
                     ";
                     })
                 ->rawColumns(array("action"))
+                ->addIndexColumn()
                 ->make(true);
+            }
+            
     }
 
     /**
@@ -77,26 +81,45 @@ class DownloadsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'no'            => 'required',
-            'nama_dokumen'  => 'required',
-            'jenis_dokumen' => 'required',
-            'file'          => 'required|file|mimes:doc,xlsx,pdf,docx,zip',
-        ]);
 
-        $file = $request->file('file');
+            $validator = Validator::make($request->all(), [
+                'no'            => 'required',
+                'nama_dokumen'  => 'required',
+                'jenis_dokumen' => 'required',
+                'file'          => 'required|file|mimes:doc,xlsx,pdf,docx,zip',
+            ]);
 
-        $new_name = $file->getClientOriginalName();
-        $file->move(\public_path('images'), $new_name);
-        $form_data = array(
-            'no'            => $request->no,
-            'nama_dokumen'  => $request->nama_dokumen,
-            'jenis_dokumen' => $request->jenis_dokumen,
-            'file'          => $new_name
-        );
+            if ($validator->fails()) {
+                return redirect('/admin/unduh/downloads/create')
+                                ->with('success', ' Gagal menambahkan, periksa jenis dokumen Anda!')
+                                ->withInput();
+            }
 
-        Downloads::create($form_data);
-        return \redirect('/admin/unduh/downloads')->with('success', ' Data berhasil ditambahkan!');
+            // $request->validate([
+            //     'no'            => 'required',
+            //     'nama_dokumen'  => 'required',
+            //     'jenis_dokumen' => 'required',
+            //     'file'          => 'required|file|mimes:doc,xlsx,pdf,docx,zip',
+            // ]);
+
+
+            $form_data = new Downloads();
+    
+            $file = $request->file('file');
+    
+            $new_name = $file->getClientOriginalName();
+            $file->move(\public_path('images'), $new_name);
+            $form_data = array(
+                'no'            => $request->no,
+                'nama_dokumen'  => $request->nama_dokumen,
+                'jenis_dokumen' => $request->jenis_dokumen,
+                'file'          => $new_name
+            );
+    
+            Downloads::create($form_data);
+            return redirect('/admin/unduh/downloads')->with('success', ' File download berhasil ditambahkan!');
+        
+       
     }
 
     /**
@@ -150,7 +173,7 @@ class DownloadsController extends Controller
         $data->save();
 
 
-        return redirect('/admin/unduh/downloads')->with('success', 'Data berhasil di update!');
+        return redirect('/admin/unduh/downloads')->with('success', ' Data berhasil di Update!');
     }
 
     /**
@@ -161,7 +184,9 @@ class DownloadsController extends Controller
      */
     public function destroy($id)
     {
-        Downloads::destroy($id);
-        return redirect('/admin/unduh/downloads');
+        // Downloads::destroy($id);
+        // return back()->with('success','Post deleted successfully');
+        $post = Downloads::where('id',$id)->delete();
+        return Response::json($post);
     }
 }

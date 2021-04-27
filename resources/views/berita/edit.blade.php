@@ -2,6 +2,8 @@
 
 @section('content')
 
+        
+
         <form action="/admin/berita/news/{{$data->id}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PATCH')

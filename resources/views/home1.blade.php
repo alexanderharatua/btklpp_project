@@ -118,29 +118,32 @@
                  </section>
              </div>
              <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 ">
-                  <h4 class="text-center text-uppercase text-secondary mb-0">Agenda</h4>
+                 <a href="/agendapage" style="text-decoration: none;"><h4 class="text-center text-uppercase text-secondary mb-0">Agenda</h4></a> 
                   <br>
                      <iframe width="100%" height="500px"
                      src="https://www.youtube.com/embed/2kBnfJ88EUE">
                      </iframe> 
-                                 <br>
+                 <br>
                  <br>
                       {{-- Portfolio Item 1 --}}
                      <div class="row justify-content-center">
+                         @foreach ($agendas->slice(0,3) as $item)
                          <div class="col-md-6 mb-5">
-                             <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                                 </div>
-                                 <img class="img-fluid" src="{{ asset('tes/img/portfolio/satu.jpg')}}" alt="" />
-                             </div>
-                         </div>
-                         <div class="col-md-6 mb-5">
+                            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#{{$item->judul_agenda}}">
+                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid" src="{{ asset('/agenda/'.$item->gambar) }}" alt="gambar" />
+                                </div>
+                            </div>
+                         @endforeach
+                        
+                         {{-- <div class="col-md-6 mb-5">
                              <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
                                  <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                      <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                                  </div>
-                                 <img class="img-fluid" src="{{asset('tes/img/portfolio/dua.jpg')}}" alt="" />
+                                 <img class="img-fluid" src="{{ asset('/agenda/'.$agendas[1]->gambar) }}" alt="gambar" />
                              </div>
                          </div>
                          <div class="col-md-6">
@@ -148,9 +151,9 @@
                                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="{{asset('tes/img/portfolio/tiga.jpg')}}" alt="" />
-                            </div>
-                        </div>
+                                <img class="img-fluid" src="{{ asset('/agenda/'.$agendas[2]->gambar) }}" alt="gambar" />
+                         </div>
+                </div> --}}
 
            
           </div>
@@ -158,35 +161,28 @@
      </section>
     <!-- Contact Section-->
     <section class="page-section portfolio" id="buletin" style="padding-top: 10px">
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Buletin</h2>
+        <a href="/buletinpage" style="text-decoration: none;">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Buletin</h2></a>
         <br>
         <div class="container">
         <div class="row justify-content-center">
-            <div class="card col-md-5 col-lg-4 mb-5" style="width: 15rem;">
+            <div class="card-deck mt-4">
+            @foreach ($buletins->slice(0,3) as $item)
+            <div class="card col-md-5 col-lg-4 mb-5">
                 
-                     <center>
-                         <img src="{{ asset('tes/img/portfolio/buletin_dbd.jpg')}}" alt="Card image cap" style="width:100%">
-                     </center>
-                        <div class="card-body">
-                          <h5 class="card-title">Demam Berdarah</h5>
-                          <p class="card-text">Demam Berdarah Dengue banyak ditemukan di daerah tropis dan sub-tropis. Data dari...
-                            </span></p>
-                            <a href="#" class="btn btn-primary">Baca selengkapnya</a>                      
-                      </div>
-                
-            </div>
-            <div class="card col-md-5 col-lg-4 mb-5" style="width: 15rem;">
-                <div>
-                    <br>
-                    <img src="{{ asset('tes/img/portfolio/buletin_pnu.png')}}" alt="Card image cap" style="width:100%">
-                        <div class="card-body">
-                          <h5 class="card-title">Pneumonia</h5>
-                          <p class="card-text">Pneumonia adalah penyakit infeksi menular yang merupakan penyebab utama kematian pada balita di dunia...</p>
-                          <a href="#" class="btn btn-primary">Baca selengkapnya</a>
-                        </div>
+                <center>
+                    <img src="{{ asset('/buletin/'.$item->gambar) }}" alt="buletin img" style="width:100%; margin-top:15px;">
+                </center>
+                   <div class="card-body">
+                     <h5 class="card-title">{{$item->judul_buletin}}</h5>
+                     <!-- <p class="card-text"><?php echo $item->isi_buletin ?>
+                       </span></p> -->
+                       <a href="/buletinpage/{{ $item->id }}" class="btn btn-primary">Baca selengkapnya</a>                      
                  </div>
+             </div>
+            @endforeach
             </div>
-        </div>
+            </div>
         </div>
         <!--
        <div class="row justify-content-center">
@@ -237,7 +233,8 @@
 
      <!-- Portfolio Modals-->
         <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+        @foreach ($agendas->slice(0,3) as $item)
+        <div class="portfolio-modal modal fade" id="{{$item->judul_agenda}}" tabindex="-1" role="dialog" aria-labelledby="{{$item->judul_agenda}}Label" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
@@ -248,11 +245,11 @@
                             <div class="row justify-content-center">
                                 <div class="col-sm-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal1Label">Agenda</h2>
+                                    <h4 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="{{ $item->judul_agenda}}Label"> {{ $item->judul_agenda }}</h4>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="tes/img/portfolio/satu.jpg" alt="" />
+                                    <img class="img-fluid rounded mb-5" src="{{ asset('/agenda/'.$item->gambar) }}" alt="gambar kegiatan" />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Kegiatan yang sedang berlangsung.</p>
+                                    <p class="mb-5"> <?php echo $item->isi_agenda ?> </p>
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -264,175 +261,6 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal2Label">Kegiatan</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="{{asset('tes/img/portfolio/dua.jpg')}}" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Kegiatan yang sedang berlangsung</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal3Label">Kegiatan</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="tes/img/portfolio/tiga.jpg" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Telah terlaksana kegiatan harian.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal4Label">Controller</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="tes/img/portfolio/gambar.jpg" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Telah terlaksana kegiatan harian.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal5Label">Agenda Kegiatan</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="tes/img/portfolio/empat.jpg" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Telah berlangsung kegiatan .</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal6Label">Kegiatan</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="{{asset('tes/img/portfolio/lima.jpg')}}" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Kegiatan pelaksanaan keseharian.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        @endforeach
+        
 @endsection

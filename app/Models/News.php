@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
     protected $guarded = [];
+
+    const CREATED_AT = 'creation_date';
+    const UPDATED_AT = 'updated_date';
 }
