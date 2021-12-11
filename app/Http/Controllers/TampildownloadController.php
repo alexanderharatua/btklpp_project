@@ -9,7 +9,7 @@ class TampildownloadController extends Controller
 {
     public function index()
     {
-        $downloads = Downloads::all();
+        $downloads = Downloads::paginate(3);
 
         return view('download', ["downloads" => $downloads]);
     }

@@ -9,8 +9,8 @@ class TampilpengumumanController extends Controller
 {
     public function index()
     {
-        $announcements = Announcements::all();
+        $announcements = Announcements::paginate(5);
 
-        return view('pengumuman', ["announcements" => $announcements]);
+        return view('pengumuman',["announcements" => $announcements]);
     }
 }

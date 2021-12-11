@@ -72,9 +72,9 @@
                         <td>  {{$item->nama_dokumen}}  </td>
                         <td>  {{$item->jenis_dokumen}}  </td>
                         <td>
-                          <center>
+                          
                             <a href="{{  asset('/images/'.$item->file)  }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a>
-                          </center>
+                          
                         </td>
                       </tr>
                       
@@ -82,6 +82,8 @@
 
                 </tbody>
               </table>
+              
+              {{ $downloads->links('vendor.pagination.bootstrap-4') }}
         </div>
     </div>
    

@@ -120,23 +120,89 @@
              <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 ">
                  <a href="/agendapage" style="text-decoration: none;"><h4 class="text-center text-uppercase text-secondary mb-0">Agenda</h4></a> 
                   <br>
-                     <iframe width="100%" height="500px"
+                     {{-- <iframe width="100%" height="500px"
                      src="https://www.youtube.com/embed/2kBnfJ88EUE">
-                     </iframe> 
+                     </iframe>  --}}
+                     <div id="carousel-example" class="carousel slide">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example" data-slide-to="1"></li>
+                            <li data-target="#carousel-example" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe width="708" height="496" src="https://www.youtube.com/embed/2kBnfJ88EUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                 <iframe width="853" height="480" src="https://www.youtube.com/embed/1zfbYHjJGfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                             </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe width="853" height="480" src="https://www.youtube.com/embed/lkV3C0Qu5dg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                     <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                         <span class="sr-only">Previous</span>
+                     </a>
+                     <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                         <span class="sr-only">Next</span>
+                     </a>
+                    </div>
                  <br>
                  <br>
+                 <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                    </div>
+                    
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner">
+                        <?php $i = 0; ?>
+                        @foreach ($agendas->slice(0,3) as $item)
+                            <div class="carousel-item <?php if ($i == 0) echo "active" ?>">
+                                <img src ="{{ asset('/agenda/'.$item->gambar) }}" alt="Los Angeles" class="d-block" width="708" height="496">
+                                <div class="carousel-caption">
+                                <h3 style="background-color: #1abc9c;">{{$item->judul_agenda}}</h3>
+                                
+                                </div>
+                            </div>
+                            <?php $i++;?>
+                         @endforeach
+                    </div>
+                    
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                    </button>
+                  </div>
                       {{-- Portfolio Item 1 --}}
                      <div class="row justify-content-center">
-                         @foreach ($agendas->slice(0,3) as $item)
-                         <div class="col-md-6 mb-5">
+                        
+
+
+                        
+                         {{-- <div class="col-md-6 mb-5">
                             <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#{{$item->judul_agenda}}">
                                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                         <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                                     </div>
                                     <img class="img-fluid" src="{{ asset('/agenda/'.$item->gambar) }}" alt="gambar" />
                                 </div>
-                            </div>
-                         @endforeach
+                            </div> --}}
                         
                          {{-- <div class="col-md-6 mb-5">
                              <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">

@@ -77,6 +77,8 @@
                 <td>{{$item->kegiatan}}</td> 
               </tr>
               @endforeach
+
+              
               {{-- <tr>
                 <th scope="row">1</th>
                 <td>Rabu, 23 Desember 2020</td>
@@ -95,8 +97,8 @@
             </tbody>
           </table>
                
-               
+          {{ $announcements->links('vendor.pagination.bootstrap-4') }} 
     </div>
-   
+  
 </div
 @endsection
