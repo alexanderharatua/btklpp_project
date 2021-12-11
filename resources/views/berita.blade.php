@@ -57,7 +57,7 @@
         <div class="container">
         <div class="row justify-content-center" style="margin-bottom:5%">
           @foreach ($news->slice(0, 10) as $item)
-          <div class="col-md-4 col-sm-12 " >  
+          <div class="col-md-4 col-sm-8 " >  
             <div class="card" style="height:620px">
                 <div class="view overlay">
                   <img class="card-img-top" src="{{ asset('/berita/'.$item->gambar) }}" style= "width:200; height:300px">

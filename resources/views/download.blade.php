@@ -51,9 +51,11 @@
 @endsection
 
 @section('content')
-<section class="page-section" style="padding-bottom: 90px; margin-top:5%">
-    <h4 class="text-center text-uppercase text-secondary mb-0">Download File</h4>
-    <br><br>
+  <div class="container d-flex align-items-center flex-column" style="padding-top: 85px">
+    <div class="alert alert-info">
+        <h2> <strong>Download File</strong>  </h2>
+    </div>
+</div>
     <div class="row">
         <div class="col-lg-8 mx-auto">
             <table class="table table-striped">
@@ -72,9 +74,7 @@
                         <td>  {{$item->nama_dokumen}}  </td>
                         <td>  {{$item->jenis_dokumen}}  </td>
                         <td>
-                          
                             <a href="{{  asset('/images/'.$item->file)  }}" target="_blank"><button type="button" class="btn btn-outline-danger">Download </button></a>
-                          
                         </td>
                       </tr>
                       
@@ -84,7 +84,7 @@
               </table>
               
               {{ $downloads->links('vendor.pagination.bootstrap-4') }}
-        </div>
+          </div>
     </div>
    
 </section>  

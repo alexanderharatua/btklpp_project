@@ -132,17 +132,17 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe width="708" height="496" src="https://www.youtube.com/embed/2kBnfJ88EUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe width="408" height="396" src="https://www.youtube.com/embed/2kBnfJ88EUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                 <iframe width="853" height="480" src="https://www.youtube.com/embed/1zfbYHjJGfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                 <iframe width="408" height="396" src="https://www.youtube.com/embed/1zfbYHjJGfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                              </div>
                             </div>
                             <div class="carousel-item">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe width="853" height="480" src="https://www.youtube.com/embed/lkV3C0Qu5dg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe width="408" height="396" src="https://www.youtube.com/embed/lkV3C0Qu5dg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
@@ -160,18 +160,22 @@
                  <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
                     <!-- Indicators/dots -->
+                    <?php $i = 0; ?>
                     <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                        @foreach ($agendas as $item)
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="{{ $i }}" class="<?php if ($i == 0) echo "active" ?>"></button>
+                            <?php $i++; ?>
+                        @endforeach
                     </div>
                     
                     <!-- The slideshow/carousel -->
                     <div class="carousel-inner">
                         <?php $i = 0; ?>
-                        @foreach ($agendas->slice(0,3) as $item)
+                        @foreach ($agendas as $item)
                             <div class="carousel-item <?php if ($i == 0) echo "active" ?>">
-                                <img src ="{{ asset('/agenda/'.$item->gambar) }}" alt="Los Angeles" class="d-block" width="708" height="496">
+                                <center>
+                                <img src ="{{ asset('/agenda/'.$item->gambar) }}" alt="Los Angeles" class="d-block" width="508" height="396">
+                                </center>
                                 <div class="carousel-caption">
                                 <h3 style="background-color: #1abc9c;">{{$item->judul_agenda}}</h3>
                                 

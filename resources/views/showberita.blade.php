@@ -68,10 +68,8 @@
               <p>Posted on January 1, 2019 at 12:00 PM</p>
 
               <hr>
-
               <!-- Preview Image -->
-              <img class="img-fluid rounded mx-auto d-block" src="{{ asset('/berita/'.$news->gambar) }}" alt="">
-
+              <img width="400px" height="300px" class="img-fluid rounded mx-auto d-block" src="{{ asset('/berita/'.$news->gambar) }}" alt="">
               <hr>
 
               <!-- Post Content -->
